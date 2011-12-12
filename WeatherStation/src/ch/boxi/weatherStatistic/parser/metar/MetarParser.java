@@ -32,8 +32,8 @@ public class MetarParser implements MeasureParser{
 			String subData = st.nextToken();
 			for(MetarSubParser subParser: subParsers){
 				if(subParser.canParse(subData)){
-					MeasurePoint measurePoint = subParser.parse(subData);
-					measurePoints.add(measurePoint);
+					List<MeasurePoint> parsedData = subParser.parse(subData);
+					measurePoints.addAll(parsedData);
 				}
 			}
 		}
