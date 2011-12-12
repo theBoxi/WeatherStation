@@ -6,6 +6,8 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.SimpleTimeZone;
 import java.util.TimeZone;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Parses a METAR date string like 061150Z
@@ -18,7 +20,8 @@ import java.util.TimeZone;
  * @author boxi
  *
  */
-public class DateParser {
+public class DateParser{
+	
 	public Date parse(String dateString) throws ParseException{
 		Calendar cal = new GregorianCalendar();
 		TimeZone utc = new SimpleTimeZone(0, "UTC");
@@ -32,5 +35,11 @@ public class DateParser {
 			throw new ParseException("time is not a valid METAR time string", 7);
 		}
 		return cal.getTime();
+	}
+
+	public boolean canParse(String phrase) {
+		Pattern pattern = Pattern.compile("\\d{6}Z");
+		Matcher matcher = pattern.matcher(phrase);
+		return matcher.matches();
 	}
 }
