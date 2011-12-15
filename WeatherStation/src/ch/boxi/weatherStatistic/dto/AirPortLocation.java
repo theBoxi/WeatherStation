@@ -43,4 +43,8 @@ public class AirPortLocation extends Location {
 	public String getIcaoCode() {
 		return icaoCode;
 	}
+
+	public String getIataCode() {
+		return iataCode;
+	}
 }

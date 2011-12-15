@@ -26,6 +26,7 @@ public class OpticalRangeParser implements MetarSubParser {
 		measure.setType(MeasureType.OpticalRange);
 		measure.setUnit(Unit.Meter);
 		measure.setAmount(Integer.parseInt(phrase));
+		retList.add(measure);
 		return retList;
 	}
 

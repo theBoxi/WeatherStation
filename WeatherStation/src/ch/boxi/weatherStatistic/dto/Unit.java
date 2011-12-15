@@ -2,6 +2,7 @@ package ch.boxi.weatherStatistic.dto;
 
 public enum Unit {
 	  DegreeCelsius("°C")
+	, DegreeNorth("°N")
 	, Knot("kt")
 	, KilometerPerHour("km/s")
 	, MeterPerSecound("m/s")
