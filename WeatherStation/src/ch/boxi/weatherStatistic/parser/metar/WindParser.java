@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.commons.lang3.StringUtils;
+
 import ch.boxi.weatherStatistic.dto.MeasurePoint;
 import ch.boxi.weatherStatistic.dto.MeasureType;
 import ch.boxi.weatherStatistic.dto.Unit;
@@ -31,7 +33,12 @@ public class WindParser implements MetarSubParser {
 		matcher.find();
 		int direction = Integer.parseInt(matcher.group(1));
 		float speed = Integer.parseInt(matcher.group(2));
-		float gust = Integer.parseInt(matcher.group(3));
+		String gustString = matcher.group(3);
+		float gust = 0;
+		if(StringUtils.isNotEmpty(gustString)){
+			gust = Integer.parseInt(matcher.group(3).substring(1));
+
+		}
 		String unit = matcher.group(4);
 
 		List<MeasurePoint> retList = new ArrayList<>(2);
@@ -48,8 +55,10 @@ public class WindParser implements MetarSubParser {
 		measurePoint = new MeasurePoint(MeasureType.WindSpeed, Unit.KilometerPerHour, speed);
 		retList.add(measurePoint);
 		
-		measurePoint = new MeasurePoint(MeasureType.Gust, Unit.KilometerPerHour, gust);
-		retList.add(measurePoint);
+		if(gust != 0){
+			measurePoint = new MeasurePoint(MeasureType.Gust, Unit.KilometerPerHour, gust);
+			retList.add(measurePoint);
+		}
 		
 		return retList;
 	}
