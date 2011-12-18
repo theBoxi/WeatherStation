@@ -4,6 +4,7 @@ public enum MeasureType {
 	  WindSpeed			//Wind
 	, WindDirection		//Windrichtung
 	, Temperatur		//temperatur
+	, DewPoint			//taupunkt
 	, Humidity			//Luftfeuchtigkeit
 	, OpticalRange		//Sichtweite
 	, AirPressure		//Luftdruck

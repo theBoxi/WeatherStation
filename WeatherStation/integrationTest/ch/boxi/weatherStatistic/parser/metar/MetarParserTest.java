@@ -21,5 +21,7 @@ public class MetarParserTest {
 		Assert.assertEquals(1014, measurement.getMeasurePoints().get(MeasureType.AirPressure).getAmount(), 0.001);
 		Assert.assertEquals(230, measurement.getMeasurePoints().get(MeasureType.WindDirection).getAmount(), 0.001);
 		Assert.assertEquals(55.56f, measurement.getMeasurePoints().get(MeasureType.Gust).getAmount(), 0.0001);
+		Assert.assertEquals(6, measurement.getMeasurePoints().get(MeasureType.Temperatur).getAmount(), 0.0001);
+		Assert.assertEquals(1, measurement.getMeasurePoints().get(MeasureType.DewPoint).getAmount(), 0.0001);
 	}
 }
