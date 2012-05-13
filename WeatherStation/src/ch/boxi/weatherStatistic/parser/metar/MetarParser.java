@@ -16,7 +16,7 @@ public class MetarParser implements MeasureParser{
 	
 	public MetarParser(){
 		subParsers.add(new OpticalRangeParser());
-		subParsers.add(new AitPressureParser());
+		subParsers.add(new AirPressureParser());
 		subParsers.add(new WindParser());
 		subParsers.add(new TemperaturParser());
 	}

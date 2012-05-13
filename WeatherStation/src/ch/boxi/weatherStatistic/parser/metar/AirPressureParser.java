@@ -10,7 +10,7 @@ import ch.boxi.weatherStatistic.dto.MeasurePoint;
 import ch.boxi.weatherStatistic.dto.MeasureType;
 import ch.boxi.weatherStatistic.dto.Unit;
 
-public class AitPressureParser implements MetarSubParser {
+public class AirPressureParser implements MetarSubParser {
 
 	private static final float INCHES_TO_HPA_FACTOR = 33.8677355f;
 
