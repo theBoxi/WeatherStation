@@ -11,7 +11,7 @@ import org.junit.Test;
 public class DateParserTest {
 	public static final String METAR_DATE = "061150Z";
 	public static final int DAY_OF_MONTH = 6;
-	public static final int HOUR_OR_DAY = 12; // because of UTC and western Time
+	public static final int HOUR_OR_DAY = 13; // because of UTC and western Time & TimeSaving UTC+2
 	public static final int MINUTE = 50;
 	
 	public void testCanParse(){

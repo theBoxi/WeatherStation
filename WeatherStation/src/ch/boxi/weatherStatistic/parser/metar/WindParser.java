@@ -37,7 +37,6 @@ public class WindParser implements MetarSubParser {
 		float gust = 0;
 		if(StringUtils.isNotEmpty(gustString)){
 			gust = Integer.parseInt(matcher.group(3).substring(1));
-
 		}
 		String unit = matcher.group(4);
 
